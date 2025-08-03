@@ -6,7 +6,10 @@ st.set_page_config(page_title="AI Customer Support Chatbot", layout="centered")
 st.title("🤖 AI Customer Support Chatbot")
 
 # Load the Hugging Face pipelines
-qa_pipeline = pipeline("question-answering")
+qa_pipeline = pipeline(
+    "question-answering",
+    model="distilbert-base-uncased-distilled-squad"
+)
 sentiment_pipeline = pipeline("sentiment-analysis")
 
 st.write("Ask a question and I’ll do my best to help!")
